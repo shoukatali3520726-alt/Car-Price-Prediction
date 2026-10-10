@@ -2,7 +2,10 @@ import streamlit as st
 import pandas as pd
 import pickle
 
-with open("car_price_model.pkl", "rb") as f:
+import gzip
+import pickle
+
+with gzip.open("car_price_model.pkl.gz", "rb") as f:
     model = pickle.load(f)
  
 with open("label_encoders.pkl", "rb") as f:
